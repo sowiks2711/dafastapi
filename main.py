@@ -72,5 +72,5 @@ def patient(patient: PatientRequest):
 @app.get('/patient/{id}')
 def get_patient(id: int):
     if id not in patientIdCounter.patients:
-        raise HTTPException(status_code=404, detail="Item not found")
+        raise HTTPException(status_code=204, detail="Item not found")
     return patientIdCounter.patients[id]
